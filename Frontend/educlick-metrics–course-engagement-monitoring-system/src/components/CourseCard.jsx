@@ -1,6 +1,8 @@
 import { sendClickEvent } from "../api/api";
+
 const CourseCard = ({ course }) => {
 
+  // Handles user action and forwards event data to backend
   const handleClick = (action) => {
     sendClickEvent(course.id, action);
   };
@@ -18,14 +20,11 @@ const CourseCard = ({ course }) => {
       "
     >
 
-      {/* Subtle Gradient Overlay */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br 
                       from-purple-500/10 via-indigo-500/5 to-transparent pointer-events-none"></div>
 
-      {/* Content */}
       <div className="relative z-10">
 
-        {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-purple-100">
             {course.title} 
@@ -36,22 +35,21 @@ const CourseCard = ({ course }) => {
             px-3 py-1 rounded-full
             bg-purple-500/20 text-purple-200
             border border-purple-400/30
-          ">🟢 {course.level}
+          ">
+            🟢 {course.level}
           </span>
         </div>
 
-        {/* Description */}
         <p className="text-purple-200/80 text-sm mb-6 leading-relaxed">
           {course.description}
         </p>
 
-        {/* Buttons */}
         <div className="flex gap-3">
 
-          {/* BUY */}
           <button
+            // Triggers BUY event tracking when user clicks
             onClick={() => handleClick("BUY")}
-            className="cursor-pointer
+            className="cursor-pointer active:scale-91
               flex-1
               bg-gradient-to-r from-yellow-400 to-amber-400
               hover:from-yellow-300 hover:to-amber-300
@@ -64,10 +62,10 @@ const CourseCard = ({ course }) => {
             💳 Buy Now
           </button>
 
-          {/* ENROLL */}
           <button
+            // Triggers ENROLL event tracking when user clicks
             onClick={() => handleClick("ENROLL")}
-            className="cursor-pointer
+            className="cursor-pointer active:scale-91
               flex-1
               bg-gradient-to-r from-indigo-500 to-purple-600
               hover:from-indigo-400 hover:to-purple-500

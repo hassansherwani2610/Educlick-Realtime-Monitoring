@@ -1,0 +1,62 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.10'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.educlick'
+version = '0.0.1-SNAPSHOT'
+description = 'Course click monitoring system using Kafka and Prometheus and Grafana'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17) // Uses Java 17 for compatibility and modern features
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor // Allows Lombok annotations during compilation only
+	}
+}
+
+repositories {
+	mavenCentral() // Central Maven repository for dependency resolution
+}
+
+ext {
+	set('springCloudVersion', "2024.0.1") // Defines Spring Cloud version (if needed later)
+}
+
+dependencies {
+
+	// Spring Boot Web + Monitoring
+	implementation 'org.springframework.boot:spring-boot-starter-actuator' // Provides production-ready monitoring endpoints
+	implementation 'org.springframework.boot:spring-boot-starter-web' // Enables REST API development
+
+	// Kafka Messaging
+	implementation 'org.springframework.kafka:spring-kafka' // Enables Kafka producer and consumer support
+
+	// Development Utilities
+	developmentOnly 'org.springframework.boot:spring-boot-devtools' // Helps auto-reload during development
+
+	// Metrics Monitoring
+	runtimeOnly 'io.micrometer:micrometer-registry-prometheus' // Exposes metrics for Prometheus scraping
+
+	// Testing Libraries
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Lombok Boilerplate Reduction
+	compileOnly 'org.projectlombok:lombok:1.18.32'
+	annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+	// Database Support
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.mysql:mysql-connector-j' // MySQL database driver
+}
+
+test {
+	useJUnitPlatform() // Enables JUnit 5 testing framework
+}
