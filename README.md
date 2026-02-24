@@ -140,13 +140,12 @@ Prometheus scrapes metrics from Spring Boot via `/actuator/prometheus`.
 | Method | Endpoint | Description |
 |------|----------|-------------|
 | POST | `/api/click` | Track course click |
-| GET | `/actuator/prometheus` | Metrics endpoint |
+| GET | `/api/metrics/click-summary` | To get the metrics of BUY and ENROLL click |
 
 ---
 
 ## 🖼️ Demo & Screenshots
 
-🔗 **Live Project URL:** _(Coming Soon)_  
 🎥 **Project Demo Video:** _(Will be added)_  
 
 ---
