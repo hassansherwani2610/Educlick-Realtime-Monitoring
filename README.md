@@ -6,6 +6,7 @@
 ## 🖼️ Demo Video
 
 🎥 **Project Demo Video:** _(Will be added)_
+
 (Shows frontend interaction, Kafka flow, Prometheus metrics, and Grafana dashboards.
 Dockerized deployment coming next.) 
 
