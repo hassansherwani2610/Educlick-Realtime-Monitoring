@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "EduClick Metrics API",
+    "_postman_id": "f2b9d4c1-8a21-4e1b-9c77-educlickmetrics01",
+    "description": "Postman collection for testing EduClick Metrics backend APIs. These APIs track course engagement actions (BUY / ENROLL) and provide aggregated metrics used for real-time dashboard visualization.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Send Course Click Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"courseId\": 101,\n  \"action\": \"BUY\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/click",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "click"
+          ]
+        },
+        "description": "Sends a course interaction event to the backend. This request publishes the event to Kafka, which is then consumed and persisted in the database for analytics."
+      }
+    },
+    {
+      "name": "Get Course Click Summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/metrics/click-summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "metrics",
+            "click-summary"
+          ]
+        },
+        "description": "Fetches aggregated course engagement metrics. This API is consumed by the frontend dashboard to visualize BUY and ENROLL actions per course."
+      }
+    }
+  ]
+}
