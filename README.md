@@ -1,6 +1,16 @@
 
 # EduClick Metrics – Course Engagement Monitoring System
 
+---
+
+## 🖼️ Demo Video
+
+🎥 **Project Demo Video:** _(Will be added)_
+(Shows frontend interaction, Kafka flow, Prometheus metrics, and Grafana dashboards.
+Dockerized deployment coming next.) 
+
+---
+
 EduClick Metrics is a **full‑stack distributed monitoring system** designed to track **course engagement events** in real time and visualize system and application metrics using modern observability tools.
 
 This project demonstrates **backend engineering, event‑driven architecture, and production‑grade monitoring** — making it ideal for recruiters evaluating real‑world system design skills.
@@ -141,12 +151,6 @@ Prometheus scrapes metrics from Spring Boot via `/actuator/prometheus`.
 |------|----------|-------------|
 | POST | `/api/click` | Track course click |
 | GET | `/api/metrics/click-summary` | To get the metrics of BUY and ENROLL click |
-
----
-
-## 🖼️ Demo & Screenshots
-
-🎥 **Project Demo Video:** _(Will be added)_  
 
 ---
 
