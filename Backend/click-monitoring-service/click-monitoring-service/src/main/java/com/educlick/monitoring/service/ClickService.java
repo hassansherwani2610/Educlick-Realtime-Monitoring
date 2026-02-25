@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class ClickService {
 
     private final ClickProducer clickProducer; // Kafka producer to publish click events
-    private final CourseClickRepository courseClickRepository;
+    private final CourseClickRepository courseClickRepository; // Repository to fetch aggregated click data
 
     // Micrometer Metrics
     private final Timer handleClickTimer; // Tracks execution time of click processing
