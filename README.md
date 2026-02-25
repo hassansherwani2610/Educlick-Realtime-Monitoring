@@ -5,7 +5,7 @@
 
 ## 🖼️ Demo Video
 
-🎥 **Project Demo Video:** _(Will be added)_
+🎥 **Project Demo Video:** https://www.canva.com/design/DAHCXDjn_lM/53kRFPD2sh4g7ezZ6P-uow/watch?utm_content=DAHCXDjn_lM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9e60affe08
 
 (Shows frontend interaction, Kafka flow, Prometheus metrics, and Grafana dashboards.
 Dockerized deployment coming next.) 
